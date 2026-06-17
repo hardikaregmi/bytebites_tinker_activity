@@ -53,7 +53,7 @@ class Menu:
         Args:
             item: FoodItem object to add
         """
-        pass
+        self.items.append(item)
     
     def removeItem(self, item):
         """
@@ -62,7 +62,7 @@ class Menu:
         Args:
             item: FoodItem object to remove
         """
-        pass
+        self.items.remove(item)
     
     def getAllItems(self):
         """
@@ -71,7 +71,7 @@ class Menu:
         Returns:
             List of all FoodItem objects
         """
-        pass
+        return self.items
     
     def filterByCategory(self, category):
         """
@@ -83,7 +83,7 @@ class Menu:
         Returns:
             List of FoodItem objects matching the category
         """
-        pass
+        return [item for item in self.items if item.category == category]
 
 
 class Transaction:
@@ -112,7 +112,7 @@ class Transaction:
         Args:
             item: FoodItem object to add
         """
-        pass
+        self.selectedItems.append(item)
     
     def removeItem(self, item):
         """
@@ -121,7 +121,7 @@ class Transaction:
         Args:
             item: FoodItem object to remove
         """
-        pass
+        self.selectedItems.remove(item)
     
     def computeTotalCost(self):
         """
@@ -130,7 +130,7 @@ class Transaction:
         Returns:
             Total cost as a float
         """
-        pass
+        return sum(item.price for item in self.selectedItems)
 
 
 class Customer:
